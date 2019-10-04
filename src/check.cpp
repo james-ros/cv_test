@@ -1,4 +1,4 @@
-//顏色辨識到停止
+//顏色辨識到停止 node：check_node
 #include <ros/ros.h>
 #include <iostream>
 #include <cv_bridge/cv_bridge.h>
