@@ -1,4 +1,4 @@
-//霍夫曲線
+//霍夫曲線 node：RGB
 #include<ros/ros.h>
 #include<iostream>
 #include<cv_bridge/cv_bridge.h>
