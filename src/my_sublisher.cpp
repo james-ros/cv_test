@@ -1,3 +1,4 @@
+//即時影像畫面開啟 node：image_listener
 #include <ros/ros.h>
 #include <image_transport/image_transport.h>
 #include <opencv2/highgui/highgui.hpp>
