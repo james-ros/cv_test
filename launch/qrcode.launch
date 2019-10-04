@@ -1,0 +1,7 @@
+<launch>
+  <node name="barcode_reader_node" pkg="zbar_ros" type="barcode_reader_node"/>
+  <node name="video_transp" pkg="cv_test" type="my_publisher"/>
+  <node name="RGB" pkg="cv_test" type="image_converter"/>
+  <node name="motor_calculator" pkg="cv_test" type="node090411002"/>
+  <node name="check_node" pkg="cv_test" type="check"/>
+</launch>
