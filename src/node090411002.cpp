@@ -1,3 +1,4 @@
+//馬達控制p-controller,qr-code node：motor_calculator
 #include <ros/ros.h>
 #include <geometry_msgs/Pose2D.h>
 #include <std_msgs/Float64.h>
