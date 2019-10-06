@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   sensor_msgs
   std_msgs
+  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -50,11 +51,10 @@ find_package(OpenCV REQUIRED)
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+add_message_files(
+   FILES
+   agv_msg.msg
+ )
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -71,10 +71,11 @@ find_package(OpenCV REQUIRED)
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   sensor_msgs#   std_msgs
-# )
+ generate_messages(
+   DEPENDENCIES
+   sensor_msgs
+   std_msgs
+ )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -108,7 +109,7 @@ find_package(OpenCV REQUIRED)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES cv_test
-#  CATKIN_DEPENDS cv_bridge image_transport roscpp sensor_msgs std_msgs
+  CATKIN_DEPENDS cv_bridge image_transport roscpp sensor_msgs std_msgs message_runtime
 #  DEPENDS system_lib
 )
 
@@ -150,7 +151,9 @@ add_executable(node09041 src/node09041.cpp)
 add_executable(my_publisher src/my_publisher.cpp)
 add_executable(my_sublisher src/my_sublisher.cpp)
 add_executable(node090411002 src/node090411002.cpp)
-add_executable(check src/check.cpp)
+add_executable(node1005 src/node1005.cpp)
+add_executable(check1007 src/check1007.cpp)
+add_executable(test_agv_msg src/test_agv_msg.cpp)
 #add_executable(testard src/testard.cpp)
 #add_executable(video_test src/video_test.cpp)
 
@@ -212,10 +215,16 @@ target_link_libraries(motorcalculator_node_done
 target_link_libraries(node09041
   ${catkin_LIBRARIES}
 )
+target_link_libraries(test_agv_msg
+  ${catkin_LIBRARIES}
+)
 target_link_libraries(node090411002
   ${catkin_LIBRARIES}
 )
-target_link_libraries(check
+target_link_libraries(node1005
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(check1007
   ${catkin_LIBRARIES}
   ${OpenCV_LIBRARIES}
 )
